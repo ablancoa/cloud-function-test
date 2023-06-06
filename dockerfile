@@ -5,6 +5,11 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 
 WORKDIR /usr/src/app
 
+RUN apt-get update && apt-get install -y \
+  chromium \
+  libnss3-dev \
+  && rm -rf /var/lib/apt/lists/*
+
 COPY package*.json ./
 RUN npm install
 RUN npm ci

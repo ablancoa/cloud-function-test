@@ -9,6 +9,7 @@ const service = async (keyword) => {
       height: 1080,
     },
     args: ["--no-sandbox"],
+    executablePath: "/usr/bin/chromium",
   });
   const inputField = ".header-search-input";
   const repoList = ".repo-list";
