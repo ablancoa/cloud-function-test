@@ -1,18 +1,19 @@
 import puppeteer from "puppeteer";
 
 const service = async (keyword) => {
+  console.log("entro a service");
   const browser = await puppeteer.launch({
-    headless: true,
+    headless: "new",
     defaultViewport: {
       width: 1920,
       height: 1080,
     },
     args: ["--no-sandbox"],
   });
-
   const inputField = ".header-search-input";
   const repoList = ".repo-list";
 
+  console.log("search input");
   try {
     const page = await browser.newPage();
     await page.goto("https://www.github.com");
